@@ -1,0 +1,30 @@
+<div ng-include="'tpl/head.html'"> </div>
+<div ng-include="'tpl/foot.html'"> </div>
+<div class="content container">
+<div class="orderdate " >
+<table class="table table-bordered table-striped table-condensed" ng-hide="nodate">
+    <caption class="text-center ">我的订单</caption>
+    <thead>
+        <tr>
+            <th>编号</th>
+            <th>菜品</th>
+            <th>下单时间</th>
+            <th>联系人</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="data in datas">
+            <td>{{data.did}}</td>
+            <td><img src="img/{{data.img_sm}}" alt=""></td>
+            <td>{{data.order_time}}</td>
+            <td>{{data.user_name}}</td>
+        </tr>
+    </tbody>
+</table>
+<div class="alert-danger nocontent " ng-show="nodate">
+    <span class="glyphicon glyphicon-warning-sign">亲！已经没有内容可加载了</span>
+  </div>
+    
+</div>
+    
+</div>

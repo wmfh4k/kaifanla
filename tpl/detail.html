@@ -1,0 +1,25 @@
+<div ng-include="'tpl/head.html'"> </div>
+<div ng-include="'tpl/foot.html'"> </div>
+<div class="container content"> 
+    <div class="dhang">
+        <ol class="breadcrumb">
+          <li><a href="#/main.html">首页</a></li>
+          <li class="active">详情</li>
+      </ol>
+      <div class="footdata">
+       <h3>{{dish.name}}</h3> 
+       <div class="sdatile">
+           <img src="img/{{dish.img_lg}}" class="img-responsive" alt="">
+           <div>
+               <p><strong>主要原材料：</strong>{{dish.material}}</p>
+                <p>{{dish.detail}}</p>
+                <p class="money">{{dish.price|currency:'￥'}}</p> 
+               </div>   
+           </div>
+           <div class="submit">
+               <a href="" ng-click="shopping()"class="btn btn-success ">{{btnshop}}<span class="badge" ng-show="clicone">{{dish.num}}</span> </a>
+           </div>
+     </div>
+ </div>
+
+</div>

@@ -1,0 +1,32 @@
+<div ng-include="'tpl/head.html'"> </div>
+<div class="container content">
+  <div class="row form-group">
+    <div class="col-xs-12">
+     <input type="search" id="search" ng-keyup="keysoso($event)" class="form-control" name="" value="" placeholder="请搜索关键字" ng-model="kw"> 
+   </div>
+  </div>
+  <div class="repeat" ng-repeat="data in datas">
+    <div class="media foot" ng-click="todetail({{data.did}})">
+      <div class="media-left  media-middle">
+        <a href="#">
+          <img class="media-object" src="img/{{data.img_sm}}" alt="...">
+        </a>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading">{{data.name}}</h4>
+        <p>{{data.material}}</p>
+        <p class="money">{{data.price|currency:'￥'}}</p>
+      </div>
+    </div>
+  </div>
+  <a href="" class="btn btn-primary btn-lg btn-group-justified" ng-hide="dalaye" ng-click="mfoot()" ng-disabled="circle">加载更多<img src="img/loading.gif" style="width:24px" alt="" ng-show="circle" /></a>
+  <div class="alert-danger nocontent " ng-show="nofoot">
+    <span class="glyphicon glyphicon-warning-sign">亲！已经没有内容可加载了</span>
+  </div>
+
+
+
+
+</div>
+
+<div ng-include="'tpl/foot.html'"></div>

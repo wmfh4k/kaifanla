@@ -1,0 +1,22 @@
+<div ng-include="'tpl/head.html'"> </div>
+<div ng-include="'tpl/foot.html'"> </div>
+<div class="content container">
+<div class="repeat " ng-repeat="data in datas">
+    <div class="media foot" >
+      <div class="media-left  media-middle">
+        <a href="#/detail/{{data.did}}">
+          <img class="media-object" src="img/{{data.img_sm}}" ng-style="{width:'80px'}" alt="...">
+      </a>
+  </div>
+  <div class="media-body shopdw">
+    <h4 class="media-heading">{{data.name}}</h4>
+    <p><strong>数量：</strong><span class="money">X{{data.num}}</span><br /><strong >单价：</strong><span class="money">{{data.price|currency:'￥'}} </span>  <a href="" class="btn btn-danger btn-group pull-right deleshop" ng-click="deletshop($index)">删除</a>
+</p>
+
+</div>
+</div>
+</div>
+
+<a href="" class="btn-default btn-group-justified text-right disabled">合计：<span class="money">{{sumshop|currency:'￥'}}</span></a>
+<a href="#/order" class="btn btn-success btn-lg btn-group-justified">提交订单</a>
+</div>

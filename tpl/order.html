@@ -1,0 +1,34 @@
+<div ng-include="'tpl/head.html'"> </div>
+<div ng-include="'tpl/foot.html'"> </div>
+<div class="content">
+    <form class="container forms"  ng-hide="succesdata">
+       <div class="form-group">
+           <label for="name" col-xs-12>联系人：</label>
+           <input ng-model="order.user_name" class="form-control" type="text" id="name" col-xs-12>
+       </div>
+       <div class="form-group">
+            <div>性别：</div>
+            <label class="radio-inline">
+              <input type="radio" name="Radio" id="inlineRadio1" value="1" ng-model="order.sex" ng-click="sex()"> 男
+          </label>
+          <label class="radio-inline">
+              <input type="radio" name="Radio" id="inlineRadio2" value="2" ng-model="order.sex" ng-click="sex()"> 女
+          </label>
+      </div>
+      <div class="form-group">
+         <label for="tel">手机号：</label>
+         <input ng-model="order.phone" class="form-control" type="number" id="tel">
+     </div>
+     <div class="form-group">
+        <label for="addr">地址：</label>
+        <textarea ng-model="order.addr" class="form-control" name="address" id="addr"></textarea>
+    </div>
+    <div class="form-group">
+        <input type="button"class="btn btn-success btn-group-justified" value="提交订单" ng-click="submitOrder()">
+    </div>
+
+</form>
+<div class=" alert-success altersucc " ng-show="succesdata">
+    <p>订单成功，你的订单编号为{{oidnum}}号，你可以在用户中心查看信息。欢迎下次光临！</p>
+</div>
+</div>
